@@ -9,7 +9,7 @@ fn main() {
     .duration_since(std::time::UNIX_EPOCH)
     .unwrap()
     .as_secs();
-println!("cargo:TEST_FOO={}", timestamp);
+    println!("cargo:rustc-env=TEST_FOO={}", timestamp);
 
     // In tests8, enable the "pass" feature to make the test return early.
     let your_command = "cargo:rustc-cfg=feature=\"pass\"";
